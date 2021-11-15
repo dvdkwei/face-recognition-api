@@ -44,4 +44,4 @@ app.post('/image/api', (req, res) => {
     image.imageApiHandler(req, res);
 })
 
-app.listen(8080, () => console.log('starting on port 8080'));
+app.listen(process.env.PORT || 8080, () => console.log('starting on port ${process.env.PORT}'));
