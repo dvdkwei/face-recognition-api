@@ -22,7 +22,9 @@ const app = express();
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    credentials: true
+}));
 
 app.get('/', (req, res) => {
     res.send('it is working!');
@@ -48,4 +50,4 @@ app.post('/image/api', (req, res) => {
     image.imageApiHandler(req, res);
 })
 
-app.listen((process.env.PORT || 8080), () => console.log('starting on port' + process.env.PORT));
+app.listen((process.env.PORT || 8080), () => console.log('starting on port ' + process.env.PORT));
