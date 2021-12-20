@@ -1,7 +1,7 @@
 const validate = require('../ErrorHandlers/Validate')
 
 const profileHandler = (req, res, db) => {
-    let userId = req.params;
+    let userId = req.params.id;
 
     db.select('*').from('users')
         .where({id: userId})
