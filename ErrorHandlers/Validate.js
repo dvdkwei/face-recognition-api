@@ -5,7 +5,7 @@
  * @param data the data to approve
  */
 const validate = (res, data) => {
-    console.log(data);
+    // console.log(data);
     data.length ? res.json(data[0]) : res.status(400).send('no user found');
 }
 
