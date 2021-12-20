@@ -4,7 +4,7 @@ const profileHandler = (req, res, db) => {
     let userId = req.params.id;
     console.log(userId);
 
-    db.select('*').from('users')
+    db.select().from('users')
         .where('id', userId)
         .then(us => console.log(us))
         .then(user => validate.validateUser(res, user))
