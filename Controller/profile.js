@@ -8,7 +8,7 @@ const profileHandler = (req, res, db) => {
         .where('id', userId)
         .then(us => console.log(us))
         .then(user => validate.validateUser(res, user))
-        .catch(() => console.log('can not retrieve user'));
+        .catch(() => res.status('400').send('can not retrieve user'));
 }
 
 module.exports = {
