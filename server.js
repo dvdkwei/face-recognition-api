@@ -14,6 +14,7 @@ const db = require('knex')({
         ssl: {
             rejectUnauthorized: false
         }
+
     }
 }); //for postgres database using knex
 
