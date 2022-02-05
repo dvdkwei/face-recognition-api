@@ -6,7 +6,7 @@ const profileHandler = (req, res, db) => {
 
     db.select().from('users')
         .where('id', userId)
-        .then(us => console.log(us))
+        .then(us => console.log('from profile.js: ' + us))
         .then(user => validate.validateUser(res, user))
         .catch(() => res.status('400').send('can not retrieve user'));
 }
